@@ -19,8 +19,8 @@ app.use((req: Request, res: Response) => {
   });
 });
 
-// app.get("/", (req: Request, res: Response) => {
-//   res.send("Product Management");
-// });
+app.get("/", (req: Request, res: Response) => {
+  res.send("Product Management");
+});
 
 export default app;

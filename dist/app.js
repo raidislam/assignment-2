@@ -20,7 +20,7 @@ app.use((req, res) => {
         message: "Route not found",
     });
 });
-// app.get("/", (req: Request, res: Response) => {
-//   res.send("Product Management");
-// });
+app.get("/", (req, res) => {
+    res.send("Product Management");
+});
 exports.default = app;

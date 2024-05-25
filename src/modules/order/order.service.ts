@@ -6,7 +6,7 @@ const createOrderIntoDB = async function (order: TOrder) {
   return result;
 };
 
-const getAllOrderData = async function (queryParam: string) {
+const getAllOrderData = async function (queryParam: string | object) {
   const result = await OrderModel.find({ email: queryParam });
   return result;
 };

@@ -1,29 +1,28 @@
-import { TProduct } from "./product.interface";
 import { ProductModel } from "./product.model";
 
 // Create new product insert into DB
-const createProductIntoDB = async function (product: TProduct) {
+const createProductIntoDB = async function (product: any) {
   const result = await ProductModel.create(product);
   return result;
 };
 
 // Get All the Product from the DB
 
-const getAllProductFromDB = async function (serchText: string) {
+const getAllProductFromDB = async function (serchText: any) {
   const result = await ProductModel.find({ name: new RegExp(serchText, "i") });
   return result;
 };
 
 // Get Single product
 
-const getSingleProductFromDB = async function (id: string) {
+const getSingleProductFromDB = async function (id: any) {
   const result = await ProductModel.findOne({ _id: id });
   return result;
 };
 
 // Update Data
 
-const updateDataValueIntoDB = async function (id: string, data: string) {
+const updateDataValueIntoDB = async function (id: any, data: any) {
   const result = await ProductModel.updateOne(
     {
       _id: id,

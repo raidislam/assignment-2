@@ -38,12 +38,14 @@ const orderCreate_C = function (req, res) {
 };
 const getAllOrder_C = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log(req.body);
         try {
             const email = req.query.email;
             let query = {};
             if (email) {
-                query = email;
+                query.email = email;
             }
+            console.log("query", query);
             const result = yield order_service_1.OrderService.getAllOrderData(query);
             res.status(200).json({
                 success: true,

@@ -19,7 +19,8 @@ const createOrderIntoDB = function (order) {
 };
 const getAllOrderData = function (queryParam) {
     return __awaiter(this, void 0, void 0, function* () {
-        const result = yield order_model_1.OrderModel.find({ email: queryParam });
+        const result = yield order_model_1.OrderModel.find(queryParam);
+        console.log(result);
         return result;
     });
 };

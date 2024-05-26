@@ -6,7 +6,7 @@ const createOrderIntoDB = async function (order: TOrder) {
   return result;
 };
 
-const getAllOrderData = async function (queryParam) {
+const getAllOrderData = async function (queryParam: any) {
   const result = await OrderModel.find(queryParam);
   console.log(result);
   return result;

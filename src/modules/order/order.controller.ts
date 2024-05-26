@@ -22,10 +22,9 @@ const orderCreate_C = async function (req: Request, res: Response) {
 };
 
 const getAllOrder_C = async function (req: Request, res: Response) {
-  console.log(req.body);
   try {
     const email = req.query.email;
-    let query = {};
+    let query: any = {};
     if (email) {
       query.email = email;
     }

@@ -12,6 +12,7 @@ app.use(cors());
 
 app.use("/api/products", ProductRoute);
 app.use("/api/orders", OrderRoute);
+
 app.use((req: Request, res: Response) => {
   res.status(404).json({
     success: false,

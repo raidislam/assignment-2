@@ -14,12 +14,12 @@ app.use((0, cors_1.default)());
 // Routes
 app.use("/api/products", product_route_1.ProductRoute);
 app.use("/api/orders", order_route_1.OrderRoute);
-// app.use((req: Request, res: Response) => {
-//   res.status(404).json({
-//     success: false,
-//     message: "Route not found",
-//   });
-// });
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Route not found",
+    });
+});
 app.get("/", (req, res) => {
     res.send("Product Management");
 });

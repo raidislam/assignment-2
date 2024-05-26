@@ -22,14 +22,17 @@ const orderCreate_C = async function (req: Request, res: Response) {
 };
 
 const getAllOrder_C = async function (req: Request, res: Response) {
+  console.log(req.body);
   try {
     const email = req.query.email;
     let query = {};
     if (email) {
-      query = email;
+      query.email = email;
     }
 
+    console.log("query", query);
     const result = await OrderService.getAllOrderData(query);
+
     res.status(200).json({
       success: true,
       message: `Orders fetched successfully!`,

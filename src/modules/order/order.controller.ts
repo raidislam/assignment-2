@@ -7,6 +7,7 @@ const orderCreate_C = async function (req: Request, res: Response) {
     const { order: orderData } = req.body;
     const orderValidData = orderValidation.parse(orderData);
     const result = await OrderService.createOrderIntoDB(orderValidData);
+    console.log("result", orderData);
     res.status(200).json({
       success: true,
       message: "Order created successfully!",

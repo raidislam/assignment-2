@@ -21,6 +21,7 @@ const orderCreate_C = function (req, res) {
             const { order: orderData } = req.body;
             const orderValidData = order_validation_1.default.parse(orderData);
             const result = yield order_service_1.OrderService.createOrderIntoDB(orderValidData);
+            console.log("result", orderData);
             res.status(200).json({
                 success: true,
                 message: "Order created successfully!",
@@ -38,7 +39,6 @@ const orderCreate_C = function (req, res) {
 };
 const getAllOrder_C = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(req.body);
         try {
             const email = req.query.email;
             let query = {};

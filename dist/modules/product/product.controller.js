@@ -19,8 +19,9 @@ const product_validation_1 = __importDefault(require("./product.validation"));
 const createProduct_C = function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { product: productData } = req.body;
-            const zodParseData = product_validation_1.default.parse(productData);
+            const product = req.body;
+            console.log(product);
+            const zodParseData = product_validation_1.default.parse(product);
             const result = yield product_service_1.ProductService.createProductIntoDB(zodParseData);
             res.status(200).json({
                 success: true,
